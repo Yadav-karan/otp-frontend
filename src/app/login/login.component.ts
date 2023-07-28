@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
       localStorage.setItem("token",data.token);
       localStorage.setItem('username',this.loginModel.user_name);
       this.redirect("otp-validation")
-      console.log(data)
     },err=>{
       console.log(err)
     })

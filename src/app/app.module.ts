@@ -10,6 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RegisteruserComponent } from './registeruser/registeruser.component';
 import { OtpvalidationComponent } from './otpvalidation/otpvalidation.component';
 import { TokenInterceptorService } from './Services/token-interceptor.service';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TokenInterceptorService } from './Services/token-interceptor.service';
     NavbarComponent,
     LoginComponent,
     RegisteruserComponent,
-    OtpvalidationComponent
+    OtpvalidationComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

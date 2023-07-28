@@ -1,12 +1,15 @@
+<app-loader *ngIf="isLoading"></app-loader>
+
+<div class="otpbtn">
+    <button class="btn btn-primary otp" (click)="sendOtp()" col="3"> Get OTP <i class="fa-brands fa-get-pocket"></i></button>
+  </div>
+
 <form #otpForm="ngForm" (ngSubmit)="validate(otpForm.value)" class="login-cont">
     <div class="login">
       <div class="mb-3">
         <h2>
-          Validate here <i class="fa-solid fa-check"></i>
+          Validate here 
         </h2>
-      </div>
-      <div class="mb-3">
-        <button class="btn btn-primary" (click)="sendOtp()" col="3"> Get OTP </button>
       </div>
       <div class="mb-3">
         <label for="otp" class="form-label"><i class="fa-solid fa-lock"></i> OTP</label>
@@ -16,7 +19,7 @@
         </div>
       </div>
       <div class="mt-4">
-        <button type="submit" [disabled]="otpForm.invalid" class="btn btn-primary" col="3"> Validate </button>
+        <button type="submit" [disabled]="otpForm.invalid" class="btn btn-primary" col="3"> Validate <i class="fa-solid fa-check"></i></button>
       </div>
     </div>
   </form>

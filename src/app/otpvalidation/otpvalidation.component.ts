@@ -26,6 +26,7 @@ export class OtpvalidationComponent implements OnInit {
   loginModel:Login = new Login()
   verifyOtp:VerifyOtp = new VerifyOtp()
   sendOtpCode:SendOtp = new SendOtp()
+  isLoading:boolean=false;
 
 
   redirect(redirect: any) {
@@ -33,9 +34,11 @@ export class OtpvalidationComponent implements OnInit {
   }
 
   validate(item: any) {
+    this.isLoading = true;
     this.verifyOtp.code = item.otpcode;
     this.verifyOtp.secret_key = this.secretKey;
     this.userService.verifyOtpCode(this.verifyOtp).subscribe((data:any)=>{
+      this.isLoading = false;
       alert(data.message);
     },err=>{
       alert(err.error.message);
@@ -43,9 +46,11 @@ export class OtpvalidationComponent implements OnInit {
   }
 
   sendOtp(){
+    this.isLoading = true;
     this.sendOtpCode.secret_key = this.secretKey;
     this.sendOtpCode.email = this.email;
     this.userService.sendOtpToMail(this.sendOtpCode).subscribe((data:any)=>{
+      this.isLoading = false;
       alert(data.message);
     },err=>{
       alert("Something went wrong");

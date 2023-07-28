@@ -28,3 +28,9 @@
 .otp{
     width: 20%;
 }
+
+.otpbtn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
