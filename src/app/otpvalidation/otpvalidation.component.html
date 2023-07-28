@@ -1,0 +1,22 @@
+<form #otpForm="ngForm" (ngSubmit)="validate(otpForm.value)" class="login-cont">
+    <div class="login">
+      <div class="mb-3">
+        <h2>
+          Validate here <i class="fa-solid fa-check"></i>
+        </h2>
+      </div>
+      <div class="mb-3">
+        <button class="btn btn-primary" (click)="sendOtp()" col="3"> Get OTP </button>
+      </div>
+      <div class="mb-3">
+        <label for="otp" class="form-label"><i class="fa-solid fa-lock"></i> OTP</label>
+        <input type="number" class="form-control" onKeyPress="if(this.value.length==6) return false" name="otpcode" #otpcode="ngModel" required placeholder="Enter OTP" ngModel />
+        <div *ngIf="!otpcode.valid && otpcode.touched" class="alert alert-danger">
+          <span>otpcode is required</span>
+        </div>
+      </div>
+      <div class="mt-4">
+        <button type="submit" [disabled]="otpForm.invalid" class="btn btn-primary" col="3"> Validate </button>
+      </div>
+    </div>
+  </form>
